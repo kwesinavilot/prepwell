@@ -67,12 +67,12 @@ export const FAQ = () => (
                                 Got questions?<br />We have answers.
                             </h4>
 
-                            <p className="text-lg max-w-xl lg:max-w-lg leading-relaxed tracking-tight text-muted-foreground  text-left">
+                            <p className="text-lg max-w-xl lg:max-w-lg leading-relaxed tracking-tight text-muted-foreground text-left">
                                 We've compiled a list of frequently asked questions to help you get started.
                             </p>
                         </div>
 
-                        <div className="">
+                        <div className="flex">
                             <Button className="gap-4" variant="outline">
                                 Got more questions? Reach out <PhoneCall className="w-4 h-4" />
                             </Button>
