@@ -15,10 +15,6 @@ export default function Home() {
         <Process />
 
         <FAQ />
-
-        <section>
-          <h1>Content</h1>
-        </section>
       </main>
 
       <Footer />
