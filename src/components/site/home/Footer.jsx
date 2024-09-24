@@ -69,9 +69,7 @@ export const Footer = () => (
         <div className="flex bottom-0 bg-green-200 px-8 items-center justify-between md:h-12 md:flex-row">
             <p className="text-balance text-center text-black text-sm leading-loose text-muted-foreground md:text-left">
                 Built by
-                <a href="https://kwesinavilot.github.io/me/" target="_blank" rel="noreferrer" className="font-medium underline underline-offset-4 hover:text-blue-600">Andrews Kwesi Ankomahene</a>,
-                <a href="https://kwesinavilot.github.io/me/" target="_blank" rel="noreferrer" className="font-medium underline underline-offset-4 hover:text-blue-600">Sika Abokoma Antwi</a> and
-                <a href="https://kwesinavilot.github.io/me/" target="_blank" rel="noreferrer" className="font-medium underline underline-offset-4 hover:text-blue-600">Courtney Yawa</a>.
+                <a href="https://kwesinavilot.github.io/me/" target="_blank" rel="noreferrer" className="font-medium underline underline-offset-4 hover:text-blue-600">Andrews Kwesi Ankomahene</a>, <a href="https://kwesinavilot.github.io/me/" target="_blank" rel="noreferrer" className="font-medium underline underline-offset-4 hover:text-blue-600">Sika Abokoma Antwi</a> and <a href="https://kwesinavilot.github.io/me/" target="_blank" rel="noreferrer" className="font-medium underline underline-offset-4 hover:text-blue-600">Courtney Yawa</a>.
             </p>
 
             <p className="text-balance text-center text-black text-sm leading-loose text-muted-foreground md:text-left">
