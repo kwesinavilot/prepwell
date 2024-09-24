@@ -42,25 +42,29 @@ export const Process = () => {
                     {steps.map((step, index) => (
                         <div className="flex items-center" key={index}>
                             <div className="flex items-start md:items-center">
-                                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white mr-3 bg-blue-600">
-                                    {step.number}
+                                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center mr-3 border border-2 border-blue-600">
+                                    <p className="text-blue-600 font-semibold">{step.number}</p>
                                 </div>
 
                                 <div className="flex-row items-start">
-                                    <h3 className="font-semibold text-lg mb-2">{step.title}</h3>
+                                    <div className="flex items-center mb-2">
+                                        {/* <step.icon className="w-5 h-5 text-indigo-600 mr-2 items-center justify-center align-center" /> */}
+                                        <h3 className="font-semibold text-lg mb-2">{step.title}</h3>
+                                    </div>
+
                                     <p className="text-gray-600 text-sm">{step.description}</p>
                                 </div>
                             </div>
 
                             {index < steps.length - 1 && (
-                                <ChevronRight className="hidden md:block text-gray-600 mx-4" />
+                                <ChevronRight className="hidden md:block w-8 h-8 justify-center items-center text-gray-600 mx-4" />
                             )}
                         </div>
                     ))}
                 </div>
 
                 <div className="flex justify-center mt-10">
-                    <p className="text-center font-semibold text-gray-600">Step 5: Enter your real interview with confidence and prepared responses.</p>
+                    <p className="text-center font-semibold text-gray-600">Then, enter your real interview with confidence and prepared responses.</p>
                 </div>
             </div>
         </section>
