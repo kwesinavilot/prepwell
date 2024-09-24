@@ -1,7 +1,7 @@
 import React from "react"
 
 export const Heading = () => (
-    <header className="sticky top-0 z-50 w-full -mb-14 flex h-16 border-b bg-white px-8 justify-between">
+    <header className="sticky top-0 z-50 w-full -mb-14 flex h-16 border-b bg-white px-10 justify-between">
         <div className="mr-4 hidden md:flex ">
             <a className="mr-6 flex items-center space-x-2 hash-tx-color" href="/">
                 <span className="hidden text-xl font-bold sm:inline-block text-blue-600">

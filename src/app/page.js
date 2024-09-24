@@ -3,6 +3,7 @@ import { Hero } from "@/components/site/home/Hero";
 import {Heading} from "@/components/site/home/Heading";
 import {Footer} from "@/components/site/home/Footer";
 import {Process} from "@/components/site/home/Process";
+import { Features } from "@/components/site/home/Features";
 
 export default function Home() {
   return (
@@ -13,6 +14,8 @@ export default function Home() {
         <Hero />
 
         <Process />
+
+        <Features />
 
         <FAQ />
       </main>

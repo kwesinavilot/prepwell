@@ -40,7 +40,7 @@ const faqs = [
 ];
 
 export const FAQ = () => (
-    <section className="w-full bg-red-100 px-8 md:py-12 md:pb-8 lg:py-12">
+    <section className="w-full bg-red-100 px-10 md:py-12 md:pb-8 lg:py-12">
         <div className="container mx-auto">
             <div className="grid lg:grid-cols-2 gap-10">
                 <div className="flex gap-10 flex-col">

@@ -31,7 +31,7 @@ const steps = [
 
 export const Process = () => {
     return (
-        <section className="w-full bg-gray-100 px-8 md:py-12 md:pb-8 lg:py-12">
+        <section className="w-full bg-gray-100 px-10 md:py-12 md:pb-8 lg:py-12">
             <div className="container mx-auto">
                 <div className="flex flex-col items-center mb-10">
                     <h2 className="text-3xl font-bold text-center mb-2">Your Path to Interview Success</h2>

@@ -2,7 +2,7 @@ import React from "react"
 
 export const Footer = () => (
     <footer className="w-full flex bottom-0 flex-col">
-        <div className="flex px-8 justify-between items-center bg-red-500 border-t border-t-slate-200 py-6 md:h-20 md:flex-row">
+        <div className="flex px-10 justify-between items-center bg-red-500 border-t border-t-slate-200 py-6 md:h-20 md:flex-row">
             <a className="flex items-center space-x-2 hash-tx-color" href="/">
                 <span className="hidden text-xl font-bold sm:inline-block text-blue-600">
                     Prepwell
@@ -66,7 +66,7 @@ export const Footer = () => (
             </nav>
         </div>
 
-        <div className="flex bottom-0 bg-green-200 px-8 items-center justify-between md:h-12 md:flex-row">
+        <div className="flex bottom-0 bg-green-200 px-10 items-center justify-between md:h-12 md:flex-row">
             <p className="text-balance text-center text-black text-sm leading-loose text-muted-foreground md:text-left">
                 Built by <a href="https://kwesinavilot.github.io/me/" target="_blank" rel="noreferrer" className="font-medium underline underline-offset-4 hover:text-blue-600">Andrews Kwesi Ankomahene</a>, <a href="https://kwesinavilot.github.io/me/" target="_blank" rel="noreferrer" className="font-medium underline underline-offset-4 hover:text-blue-600">Sika Abokoma Antwi</a> and <a href="https://kwesinavilot.github.io/me/" target="_blank" rel="noreferrer" className="font-medium underline underline-offset-4 hover:text-blue-600">Courtney Yawa</a>.
             </p>
