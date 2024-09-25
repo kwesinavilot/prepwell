@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
+import { signIn } from "next-auth/react"
 
 const formSchema = z.object({
     email: z.string()
@@ -55,7 +56,11 @@ export default function SignUp() {
                     </h2>
                 </div>
 
-                <Button variant="outline" className="mb-8 w-full text-white p-6 bg-blue-600 hover:bg-blue-600/90 hover:text-white">
+                <Button
+                    variant="outline"
+                    className="mb-8 w-full text-white p-6 bg-blue-600 hover:bg-blue-600/90 hover:text-white"
+                    onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
+                >
                     <FaGoogle className="mr-2 h-4 w-4" />
                     Continue with Google
                 </Button>
