@@ -33,7 +33,7 @@ export const Hero = () => (
 
         <div className="transform-none">
             <div className="flex w-full items-center justify-center space-x-4 py-4 md:pb-2">
-                <a className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-md font-semibold ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-blue-600 text-primary-foreground hover:bg-blue-600/90 px-5 py-3" href="/auth/signin">Get Prepped!</a>
+                <a className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-md font-semibold ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-blue-600 text-primary-foreground hover:bg-blue-600/90 px-5 py-3" href="/auth">Get Prepped!</a>
             </div>
         </div>
     </section>
