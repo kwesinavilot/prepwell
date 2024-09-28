@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 
 export const Hero = () => (
     <section className="mx-auto flex max-w-[980px] flex-col items-center gap-6 md:py-12 md:pb-8 lg:py-28 lg:pb-12">

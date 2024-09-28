@@ -1,8 +1,6 @@
-import React from "react"
-
 export const Footer = () => (
     <footer className="w-full flex bottom-0 flex-col">
-        <div className="flex px-10 justify-between items-center bg-red-500 border-t border-t-slate-200 py-6 md:h-20 md:flex-row">
+        <div className="flex px-10 justify-between border-t border-t-slate-200 items-center bg-white py-6 md:h-20 md:flex-row">
             <a className="flex items-center space-x-2 hash-tx-color" href="/">
                 <span className="hidden text-xl font-bold sm:inline-block text-blue-600">
                     Prepwell
@@ -38,7 +36,7 @@ export const Footer = () => (
 
                 <a target="_blank" rel="noreferrer" href="#">
                     <div className="font-semibold text-sm border border-transparent inline-flex justify-center hover:border hover:border-slate-200 items-center gap-2 dark:hover:border-slate-800 focus:outline-none focus:ring focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 focus:dark:ring-offset-slate-800 text-slate-600 dark:text-slate-300 rounded-full p-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" /><path d="m10 15 5-3-5-3z" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" /><path d="m10 15 5-3-5-3z" /></svg>
 
                         <span className="sr-only">YouTube</span>
                     </div>
@@ -66,13 +64,13 @@ export const Footer = () => (
             </nav>
         </div>
 
-        <div className="flex bottom-0 bg-green-200 px-10 items-center justify-between md:h-12 md:flex-row">
-            <p className="text-balance text-center text-black text-sm leading-loose text-muted-foreground md:text-left">
+        <div className="flex bottom-0 bg-slate-100 px-10 items-center justify-between h-14 flex-row">
+            <p className="text-balance text-center text-black text-sm leading-loose md:text-left">
                 Built by <a href="https://kwesinavilot.github.io/me/" target="_blank" rel="noreferrer" className="font-medium underline underline-offset-4 hover:text-blue-600">Andrews Kwesi Ankomahene</a>, <a href="https://kwesinavilot.github.io/me/" target="_blank" rel="noreferrer" className="font-medium underline underline-offset-4 hover:text-blue-600">Sika Abokoma Antwi</a> and <a href="https://kwesinavilot.github.io/me/" target="_blank" rel="noreferrer" className="font-medium underline underline-offset-4 hover:text-blue-600">Courtney Yawa</a>.
             </p>
 
-            <p className="text-balance text-center text-black text-sm leading-loose text-muted-foreground md:text-left">
-                The source code is available on <a href="https://github.com/kwesinavilot/prepwell" target="_blank" rel="noreferrer" className="font-medium underline underline-offset-4 hover:text-blue-600">GitHub</a>.
+            <p className="text-balance text-center text-black text-sm leading-loose md:text-left">
+                The source code is available on <a href="https://github.com/kwesinavilot/prepwell" target="_blank" rel="noreferrer" className="font-medium underline underline-offset-4 hover:text-blue-600">GitHub</a>
             </p>
         </div>
     </footer>

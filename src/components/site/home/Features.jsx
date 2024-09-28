@@ -54,7 +54,7 @@ const FeatureItem = ({ icon: Icon, title, description }) => (
 );
 
 export const Features = () => (
-    <section className="w-full bg-orange-100 px-10 md:py-12 md:pb-8 lg:py-12">
+    <section className="w-full bg-white px-10 md:py-12 md:pb-8 lg:py-14">
         <div className="container mx-auto">
             <div className="flex gap-5 flex-col">
                 <div className="flex">

@@ -1,10 +1,11 @@
-'use client';
+// 'use client';
 
-import { useSession } from "next-auth/react";
+// import { useSession } from "next-auth/react";
+import { auth } from "@/services/auth";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-export const Header = () => {
-    const { data: session } = useSession();
+export default async function Header(){
+    const session = await auth()
 
     return (
         <header className="flex justify-end items-center p-4 bg-white border-b">
