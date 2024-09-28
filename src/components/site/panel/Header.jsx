@@ -1,6 +1,3 @@
-// 'use client';
-
-// import { useSession } from "next-auth/react";
 import { auth } from "@/services/auth";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 

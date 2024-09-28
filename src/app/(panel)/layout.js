@@ -1,23 +1,30 @@
 // import { SessionProvider } from "next-auth/react"
-// import { Sidebar } from '@/components/site/panel/Sidebar';
-// import { Header } from '@/components/site/panel/Header';
+import { Sidebar } from '@/components/site/panel/Sidebar';
+import Header from '@/components/site/panel/Header';
 
-// import "@/styles/globals.css";
+import { Inter } from "next/font/google";
+import "@/styles/globals.css";
 
-// export default async function Layout({ children }) {
-//     return (
-//         // <SessionProvider>
-//             <div className="flex h-screen">
-//                 {/* <Sidebar /> */}
+const inter = Inter({ subsets: ["latin"] });
 
-//                 <section className="flex flex-col flex-1 overflow-hidden">
-//                     {/* <Header /> */}
+export default function PanelLayout({ children }) {
+    return (
+        <html lang="en">
+            <body className={inter.className}>
+                {/* <SessionProvider> */}
+                    <div className="flex h-screen">
+                        <Sidebar />
 
-//                     <main className="flex-1 overflow-auto p-6">
-//                         {children}
-//                     </main>
-//                 </section>
-//             </div>
-//         // </SessionProvider>
-//     );
-// }
+                        <section className="flex flex-col flex-1 overflow-hidden">
+                            <Header />
+
+                            <main className="flex-1 overflow-auto p-6">
+                                {children}
+                            </main>
+                        </section>
+                    </div>
+                {/* </SessionProvider> */}
+            </body>
+        </html>
+    );
+}
