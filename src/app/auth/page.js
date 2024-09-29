@@ -110,13 +110,6 @@ export default function SignUp() {
                     </Link>
                     .
                 </p>
-
-                {/* <p className="text-center text-sm text-gray-600">
-                Already have an account?{' '}
-                <Link href="/login" className="font-medium text-indigo-600 hover:text-indigo-500">
-                    Log in
-                </Link>
-            </p> */}
             </div>
         </div>
     );

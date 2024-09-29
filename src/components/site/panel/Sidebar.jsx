@@ -12,7 +12,6 @@ import {
     BriefcaseIcon,
     VideoIcon,
     CalendarIcon,
-    SettingsIcon,
     ArrowLeftToLine,
     ArrowRightToLine
 } from 'lucide-react';
@@ -22,8 +21,7 @@ const navItems = [
     { name: 'Practice Sessions', href: '/practice', icon: VideoIcon },
     { name: 'My Documents', href: '/documents', icon: FileTextIcon },
     { name: 'Job Listings', href: '/jobs', icon: BriefcaseIcon },
-    { name: 'Schedule', href: '/schedule', icon: CalendarIcon },
-    { name: 'Settings', href: '/settings', icon: SettingsIcon },
+    { name: 'Schedule', href: '/schedule', icon: CalendarIcon }
 ];
 
 export const Sidebar = () => {
@@ -37,7 +35,7 @@ export const Sidebar = () => {
         )}>
             <div className={`flex items-center justify-between py-3 pr-2 border-b ${isCollapsed ? 'pl-3' : 'pl-6'}`}>
                 {!isCollapsed && <span className="hidden text-xl font-bold sm:inline-block text-blue-600">Prepwell</span>}
-                
+
                 <Button
                     variant="ghost"
                     size="icon"

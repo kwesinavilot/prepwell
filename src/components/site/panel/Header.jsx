@@ -12,7 +12,7 @@ import {
 
 async function handleSignOut() {
     "use server"
-    console.log("Logging out...")
+    console.log("Signing out...")
     await signOut();
 }
 
