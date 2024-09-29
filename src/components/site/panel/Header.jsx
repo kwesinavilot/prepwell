@@ -1,15 +1,68 @@
-import { auth } from "@/services/auth";
+import { auth, signOut } from "@/services/auth";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuGroup,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
-export default async function Header(){
+async function handleSignOut() {
+    "use server"
+    console.log("Logging out...")
+    await signOut();
+}
+
+export default async function Header() {
     const session = await auth()
 
     return (
-        <header className="flex justify-end items-center p-2.5 bg-white border-b">
-            <Avatar>
-                <AvatarImage src={session?.user?.image || ""} alt="User" />
-                <AvatarFallback>{session?.user?.name?.[0] || "U"}</AvatarFallback>
-            </Avatar>
+        <header className="flex justify-end items-center py-2.5 pr-6 bg-white border-b">
+
+            <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                    <Avatar>
+                        <AvatarImage src={session?.user?.image || ""} alt="User" />
+                        <AvatarFallback>{session?.user?.name?.[0] || "U"}</AvatarFallback>
+                    </Avatar>
+                </DropdownMenuTrigger>
+
+                <DropdownMenuContent className="w-56 mr-6">
+                    <DropdownMenuLabel className="flex flex-col space-y-1">
+                        {session?.user?.name}
+                        <span className="text-xs text-muted-foreground">{session?.user?.email}</span>
+                    </DropdownMenuLabel>
+
+                    <DropdownMenuSeparator />
+
+                    <DropdownMenuGroup>
+                        <DropdownMenuItem className="cursor-pointer">
+                            Profile
+                        </DropdownMenuItem>
+                        <DropdownMenuItem className="cursor-pointer">
+                            Billing
+                        </DropdownMenuItem>
+                        <DropdownMenuItem className="cursor-pointer">
+                            Settings
+                        </DropdownMenuItem>
+                    </DropdownMenuGroup>
+
+                    <DropdownMenuSeparator />
+
+                    <DropdownMenuItem className="cursor-pointer">Support</DropdownMenuItem>
+
+                    <DropdownMenuSeparator />
+
+                    <DropdownMenuItem className="cursor-pointer">
+                        <form action={handleSignOut} className="w-full p-0 m-0">
+                            <button type="submit" className="w-full text-left">Log Out</button>
+                        </form>
+                    </DropdownMenuItem>
+                </DropdownMenuContent>
+            </DropdownMenu>
         </header>
     );
 }
