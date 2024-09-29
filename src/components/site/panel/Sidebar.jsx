@@ -17,12 +17,12 @@ import {
 } from 'lucide-react';
 
 const navItems = [
-    { name: 'Dashboard', href: '/panel', icon: HomeIcon },
-    { name: 'My Documents', href: '/panel/documents', icon: FileTextIcon },
-    { name: 'Job Listings', href: '/panel/jobs', icon: BriefcaseIcon },
-    { name: 'Practice Sessions', href: '/panel/practice', icon: VideoIcon },
-    { name: 'Schedule', href: '/panel/schedule', icon: CalendarIcon },
-    { name: 'Settings', href: '/panel/settings', icon: SettingsIcon },
+    { name: 'Dashboard', href: '/dashboard', icon: HomeIcon },
+    { name: 'My Documents', href: '/documents', icon: FileTextIcon },
+    { name: 'Job Listings', href: '/jobs', icon: BriefcaseIcon },
+    { name: 'Practice Sessions', href: '/practice', icon: VideoIcon },
+    { name: 'Schedule', href: '/schedule', icon: CalendarIcon },
+    { name: 'Settings', href: '/settings', icon: SettingsIcon },
 ];
 
 export const Sidebar = () => {
@@ -31,17 +31,17 @@ export const Sidebar = () => {
 
     return (
         <div className={cn(
-            "flex flex-col h-screen bg-gray-800 text-white transition-all duration-300",
+            "flex flex-col h-screen bg-white transition-all duration-300 border-r",
             isCollapsed ? "w-16" : "w-64"
         )}>
-            <div className="flex items-center justify-between p-3 border-b border-slate-100">
-                {!isCollapsed && <span className="text-xl font-bold">Promptwell</span>}
+            <div className="flex items-center justify-between py-3 pl-6 pr-2 border-b">
+                {!isCollapsed && <span className="hidden text-xl font-bold sm:inline-block text-blue-600">Prepwell</span>}
                 
                 <Button
                     variant="ghost"
                     size="icon"
                     onClick={() => setIsCollapsed(!isCollapsed)}
-                    className="text-white hover:bg-gray-700"
+                    className="text-black hover:bg-gray-200"
                 >
                     <MenuIcon className="h-5 w-5" />
                 </Button>
@@ -54,12 +54,12 @@ export const Sidebar = () => {
                             key={item.href}
                             href={item.href}
                             className={cn(
-                                "flex items-center space-x-2 rounded-lg px-3 py-2 text-gray-200 hover:bg-gray-700",
-                                pathname === item.href && "bg-gray-700"
+                                "flex items-center space-x-2 rounded-lg px-3 py-2 hover:bg-gray-200",
+                                pathname === item.href && "bg-gray-200"
                             )}
                         >
                             <item.icon className="h-5 w-5" />
-                            {!isCollapsed && <span>{item.name}</span>}
+                            {!isCollapsed && <span className="text-black">{item.name}</span>}
                         </Link>
                     ))}
                 </nav>
