@@ -5,7 +5,7 @@ export default async function Header(){
     const session = await auth()
 
     return (
-        <header className="flex justify-end items-center p-4 bg-white border-b">
+        <header className="flex justify-end items-center p-2.5 bg-white border-b">
             <Avatar>
                 <AvatarImage src={session?.user?.image || ""} alt="User" />
                 <AvatarFallback>{session?.user?.name?.[0] || "U"}</AvatarFallback>

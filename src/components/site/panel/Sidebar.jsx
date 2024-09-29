@@ -34,7 +34,7 @@ export const Sidebar = () => {
             "flex flex-col h-screen bg-gray-800 text-white transition-all duration-300",
             isCollapsed ? "w-16" : "w-64"
         )}>
-            <div className="flex items-center justify-between p-4">
+            <div className="flex items-center justify-between p-3 border-b border-slate-100">
                 {!isCollapsed && <span className="text-xl font-bold">Promptwell</span>}
                 
                 <Button
