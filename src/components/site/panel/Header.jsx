@@ -9,6 +9,7 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import SignOut from "./SignOut";
 
 async function handleSignOut() {
     "use server"
@@ -57,9 +58,7 @@ export default async function Header() {
                     <DropdownMenuSeparator />
 
                     <DropdownMenuItem className="cursor-pointer">
-                        <form action={handleSignOut} className="w-full p-0 m-0">
-                            <button type="submit" className="w-full text-left">Log Out</button>
-                        </form>
+                        <SignOut />
                     </DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>
