@@ -13,14 +13,15 @@ import {
     VideoIcon,
     CalendarIcon,
     SettingsIcon,
-    MenuIcon
+    ArrowLeftToLine,
+    ArrowRightToLine
 } from 'lucide-react';
 
 const navItems = [
     { name: 'Dashboard', href: '/dashboard', icon: HomeIcon },
+    { name: 'Practice Sessions', href: '/practice', icon: VideoIcon },
     { name: 'My Documents', href: '/documents', icon: FileTextIcon },
     { name: 'Job Listings', href: '/jobs', icon: BriefcaseIcon },
-    { name: 'Practice Sessions', href: '/practice', icon: VideoIcon },
     { name: 'Schedule', href: '/schedule', icon: CalendarIcon },
     { name: 'Settings', href: '/settings', icon: SettingsIcon },
 ];
@@ -34,7 +35,7 @@ export const Sidebar = () => {
             "flex flex-col h-screen bg-white transition-all duration-300 border-r",
             isCollapsed ? "w-16" : "w-64"
         )}>
-            <div className="flex items-center justify-between py-3 pl-6 pr-2 border-b">
+            <div className={`flex items-center justify-between py-3 pr-2 border-b ${isCollapsed ? 'pl-3' : 'pl-6'}`}>
                 {!isCollapsed && <span className="hidden text-xl font-bold sm:inline-block text-blue-600">Prepwell</span>}
                 
                 <Button
@@ -43,7 +44,7 @@ export const Sidebar = () => {
                     onClick={() => setIsCollapsed(!isCollapsed)}
                     className="text-black hover:bg-gray-200"
                 >
-                    <MenuIcon className="h-5 w-5" />
+                    {isCollapsed ? <ArrowRightToLine className="h-5 w-5" /> : <ArrowLeftToLine className="h-5 w-5" />}
                 </Button>
             </div>
 
