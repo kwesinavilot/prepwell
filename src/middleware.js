@@ -4,29 +4,32 @@ import authConfig from "@/services/auth.config"
 
 export const { auth } = NextAuth(authConfig)
 
+const protectedRoutes = ['/dashboard', '/documents', '/jobs', '/practice', '/schedule', '/settings', '/firstprep']
+
 export default auth((req) => {
-    const { nextUrl } = req
-    const isLoggedIn = !!req.auth
-    // console.log("isLoggedIn", isLoggedIn)
-    const isAuthPage = nextUrl.pathname.startsWith('/auth')
-    const isFirstPage = nextUrl.pathname === '/firstprep'
+    const { nextUrl } = req;
+    const isLoggedIn = !!req.auth;
+    console.log("isLoggedIn", isLoggedIn);
+    const isAuthPage = nextUrl.pathname.startsWith('/auth');
+    const isFirstPage = nextUrl.pathname === '/firstprep';
+    const isPanelPage = protectedRoutes.some(route => req.nextUrl.pathname.startsWith(route));
 
-    if (!isLoggedIn) {
-        if (!isAuthPage) {
-            return NextResponse.redirect(new URL('/auth', nextUrl))
-        }
-    } else {
-        // console.log('Redirecting authenticated user...')
-        const authUser = req.auth.user
-        // console.log("auth: ", req.auth)
+    if (!isLoggedIn && isPanelPage) {
+        console.log('Redirecting unauthenticated user to auth...');
+        return NextResponse.redirect(new URL('/auth', req.url))
+    }
 
-        if (authUser.first_prep === 'NOTSTARTED' && !isFirstPage) {
-            // console.log("User hasn't taken first prep. Redirecting...")
+    if (isLoggedIn) {
+        console.log('Redirecting authenticated user...')
+        const first_prep = req.auth.user?.first_prep
+
+        if (first_prep === 'NOTSTARTED' && !isFirstPage) {
+            console.log("User hasn't taken first prep. Redirecting...")
             return NextResponse.redirect(new URL('/firstprep', nextUrl))
         }
 
-        if ((isAuthPage || nextUrl.pathname === '/') && authUser.first_prep !== 'NOTSTARTED') {
-            // console.log('Authenticated user attempting to access auth, landing or first pages. Redirecting...')
+        if ((isAuthPage || nextUrl.pathname === '/') && first_prep !== 'NOTSTARTED') {
+            console.log('Authenticated user attempting to access auth, landing or first pages. Redirecting...')
             return NextResponse.redirect(new URL('/dashboard', nextUrl))
         }
     }

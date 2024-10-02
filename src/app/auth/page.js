@@ -77,7 +77,7 @@ export default function SignUp() {
                     </div>
                 </div>
 
-                <Form {...form}>
+                <Form {...form} disabled>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                         <FormField
                             control={form.control}
