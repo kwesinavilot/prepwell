@@ -22,7 +22,6 @@ export default async function Header() {
 
     return (
         <header className="flex justify-end items-center py-2.5 pr-6 bg-white border-b">
-
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                     <Avatar>

@@ -9,7 +9,7 @@ export default auth((req) => {
     const isLoggedIn = !!req.auth
     // console.log("isLoggedIn", isLoggedIn)
     const isAuthPage = nextUrl.pathname.startsWith('/auth')
-    const isFirstPage = nextUrl.pathname === '/first'
+    const isFirstPage = nextUrl.pathname === '/firstprep'
 
     if (!isLoggedIn) {
         if (!isAuthPage) {
@@ -22,7 +22,7 @@ export default auth((req) => {
 
         if (authUser.first_prep === 'NOTSTARTED' && !isFirstPage) {
             // console.log("User hasn't taken first prep. Redirecting...")
-            return NextResponse.redirect(new URL('/first', nextUrl))
+            return NextResponse.redirect(new URL('/firstprep', nextUrl))
         }
 
         if ((isAuthPage || nextUrl.pathname === '/') && authUser.first_prep !== 'NOTSTARTED') {
