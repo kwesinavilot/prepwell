@@ -3,7 +3,7 @@ import { signOut } from "@/services/auth";
 async function handleSignOut() {
     "use server"
     console.log("Signing out...")
-    await signOut();
+    await signOut({redirectTo: "/auth"});
 }
 
 export default async function SignOut() {

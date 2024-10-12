@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
@@ -18,6 +18,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
 import { signIn } from "next-auth/react"
+import { Loader } from "lucide-react"
 
 const formSchema = z.object({
     email: z.string()
@@ -30,6 +31,8 @@ const formSchema = z.object({
 })
 
 export default function SignUp() {
+    const [isLoading, setIsLoading] = useState(false);
+
     const form = useForm({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -59,10 +62,19 @@ export default function SignUp() {
                 <Button
                     variant="outline"
                     className="mb-8 w-full text-white p-6 bg-blue-600 hover:bg-blue-600/90 hover:text-white"
-                    onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
+                    onClick={() => {
+                        setIsLoading(true);
+                        signIn("google", { callbackUrl: "/dashboard" });
+                    }}
                 >
-                    <FaGoogle className="mr-2 h-4 w-4" />
-                    Continue with Google
+                    {isLoading ? (
+                        <Loader className="mr-2 h-4 w-4 animate-spin" />
+                    ) : (
+                        <div className="flex items-center justify-center">
+                            <FaGoogle className="mr-2 h-4 w-4" />
+                            Continue with Google
+                        </div>
+                    )}
                 </Button>
 
                 <div className="relative mb-5">

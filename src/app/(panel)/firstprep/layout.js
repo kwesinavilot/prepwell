@@ -30,7 +30,7 @@ export default async function PanelLayout({ children }) {
                 <div className="w-full h-screen">
                     <header className="sticky top-0 z-50 w-full -mb-14 flex h-16 bg-white px-10 justify-between">
                         <div className="flex">
-                            <Link className="flex items-center hash-tx-color" href="/">
+                            <Link className="flex items-center hash-tx-color" href="/firstprep">
                                 <span className="hidden text-xl font-bold sm:inline-block text-blue-600">
                                     Prepwell
                                 </span>

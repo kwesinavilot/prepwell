@@ -48,7 +48,7 @@ export default function OnboardingFlow() {
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
 
-    const router = useRouter(); 
+    const router = useRouter();
 
     const jobInfoForm = useForm({
         resolver: zodResolver(jobInfoSchema),
@@ -59,9 +59,9 @@ export default function OnboardingFlow() {
     })
 
     const onJobInfoSubmit = (data) => {
-        console.log(data)
-        setJobInfo(data)
-        setStep(3)
+        console.log(data);
+        setJobInfo(data);
+        setStep(3);
     }
 
     const handleFileUpload = (file) => {
@@ -70,40 +70,38 @@ export default function OnboardingFlow() {
             setResume(null);
             return;
         }
+
         try {
             resumeSchema.parse({ resume: file });
             setResume(file);
-            setError(null);  // Clear any previous errors
+            setError(null);
         } catch (error) {
             setError(error.errors[0]?.message || "Invalid file type selected");
-            setResume(null);  // Clear the invalid file
+            setResume(null);
         }
     };
 
     const onResumeSubmit = async (event) => {
         event.preventDefault();
-        setIsLoading(true);
-
+        
         if (resume) {
+            setIsLoading(true);
+
             try {
                 resumeSchema.parse({ resume });
                 await submitData();
-                setIsLoading(false);
             } catch (error) {
+                setIsLoading(true);
                 setError(error.errors[0].message);
             }
         } else {
+            setIsLoading(false);
             setError("Please upload your resume");
         }
     };
 
-    useEffect(() => {
-        console.log("Move to step ", step);
-    }, [step, jobInfo, resume]);
-
     const submitData = async () => {
-        console.log("Submitting data")
-
+        console.log('Submitting data...');
         const formData = new FormData();
         formData.append('roleName', jobInfo.roleName);
         formData.append('description', jobInfo.description);
@@ -115,17 +113,23 @@ export default function OnboardingFlow() {
                 body: formData,
             });
 
-            if (response.ok) {
-                console.log('Data submitted successfully');
+            const result = await response.json();
 
+            if (response.ok) {
+                setIsLoading(false);
+                console.log('Data submitted successfully', result);
                 router.push('/firstprep/practice/');
             } else {
-                console.error('Submission failed');
+                console.error('Submission failed', result);
+                setIsLoading(false);
             }
         } catch (error) {
             console.error('Error submitting data:', error);
+            setIsLoading(false);
+            // Handle error (e.g., show error message to user)
         }
     };
+
 
     const renderStep1 = () => (
         <>

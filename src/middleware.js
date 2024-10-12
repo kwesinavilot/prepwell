@@ -22,10 +22,14 @@ export default auth((req) => {
     if (isLoggedIn) {
         console.log('Redirecting authenticated user...')
         const first_prep = req.auth.user?.first_prep
+        console.log('first_prep: ', first_prep)
 
         if (first_prep === 'NOTSTARTED' && !isFirstPage) {
             console.log("User hasn't taken first prep. Redirecting...")
             return NextResponse.redirect(new URL('/firstprep', nextUrl))
+        } else if (first_prep === 'MIDWAY' && nextUrl.pathname !== '/firstprep/interview') {
+            console.log("The user is midway. Redirecting...")
+            return NextResponse.redirect(new URL('/firstprep/interview', nextUrl))
         }
 
         if ((isAuthPage || nextUrl.pathname === '/') && first_prep !== 'NOTSTARTED') {

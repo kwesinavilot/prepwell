@@ -11,12 +11,6 @@ import {
 } from "@/components/ui/dropdown-menu"
 import SignOut from "./SignOut";
 
-async function handleSignOut() {
-    "use server"
-    console.log("Signing out...")
-    await signOut();
-}
-
 export default async function Header() {
     const session = await auth()
 
