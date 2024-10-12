@@ -66,7 +66,7 @@ export default async function PanelLayout({ children }) {
                         </div>
                     </header>
 
-                    <main className="flex-1 overflow-auto py-20 px-10">
+                    <main className="flex-1 overflow-auto py-0 px-10">
                         {children}
                     </main>
                 </div>
